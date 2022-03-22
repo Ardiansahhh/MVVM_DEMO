@@ -1,30 +1,69 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility that Flutter provides. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
+import 'anjing.dart';
+import 'burung.dart';
+import 'ikan.dart';
+import 'kucing.dart';
+import 'pakaian.dart';
+import 'hewan.dart';
 
-import 'package:mvvm_demo/main.dart';
+// void main() {
+//   var pakaian = Pakaian(jenis: "Baju",warna: "Pink", ukuran: "M");
+//   print("${pakaian.jenis} - warna ${pakaian.warna} - Ukuran ${pakaian.ukuranGet}");
+//   print("GANTI UKURAN");
+//   pakaian.setukuran = "XXL";
+//   print("${pakaian.jenis} - warna ${pakaian.warna} - Ukuran ${pakaian.ukuranGet}");
+
+//   var pakaian2 = Pakaian(jenis: "Kemeja", warna: "Hitam", ukuran: "XL");
+//   print("${pakaian2.jenis} - warna ${pakaian2.warna} - Ukuran ${pakaian2.ukuranGet}");
+// }
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  Kucing hewan1 = Kucing(berat: 5, jumlahKaki: 4);
+  hewan1.setLari = 5;
+  print("Hewan 1 : ${hewan1.kategori} - ${hewan1.nama}");
+  print("${hewan1.berat} Kg");
+  print("${hewan1.jumlahKaki} Kaki");
+  print("----- MAKAN -----");
+  hewan1.makan = 1;
+  print("Sekarang ${hewan1.berat}");
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+  print("\n======================\n");
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+  //Hewan hewan2 = Hewan(kategori: "Laut", nama: "Ikan", berat: 2, kecepatanRenang: 2);
+  Ikan hewan2 = Ikan(berat: 2);
+  hewan2.setRenang = 4;
+  print("Hewan 12 : ${hewan2.kategori} - ${hewan2.nama}");
+  print("${hewan2.berat} Kg");
+  print("Berenang : ${hewan2.renang} m/s");
+  print("----- MAKAN -----");
+  hewan2.makan = 1;
+  print("Sekarang ${hewan2.berat}");
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
-  });
-}
+  print("\n======================\n");
+
+  Burung hewan3 = Burung(berat: 2);
+  hewan3.setTerbang = 3;
+  print("Hewan 3 : ${hewan3.kategori} - ${hewan3.nama}");
+  print("${hewan3.berat} Kg");
+  print("Terbang : ${hewan3.terbang} m/s");
+  print("----- MAKAN -----");
+  hewan2.makan = 1;
+  print("Sekarang ${hewan3.berat}");
+
+  print("\n======================\n");
+
+  
+  Anjing hewan4 = Anjing(berat: 2, jumlahKaki: 4);
+  hewan4.setLari = 10;
+  hewan4.setRenang = 40;
+  print("Hewan 4 : ${hewan4.kategori} - ${hewan4.nama}");
+  print("${hewan4.berat} Kg");
+  print("Berlari : ${hewan4.lari} m/s");
+  print("Renang : ${hewan4.renang} m/s");
+  print("----- MAKAN -----");
+  hewan4.makan = 1;
+  print("Sekarang ${hewan4.berat}");
+
+  print("\n======================\n");
+} 
+
